@@ -26,7 +26,11 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <assert.h>
+#ifdef __x86_64__
 #include <emmintrin.h>
+#elif __aarch64__
+#include "SSE2NEON.h"
+#endif
 #include "ksw.h"
 
 #ifdef USE_MALLOC_WRAPPERS
